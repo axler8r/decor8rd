@@ -39,7 +39,14 @@ public class Listener : BackgroundService
             await using var stream_ = new NetworkStream(socket_);
             using var reader_ = new StreamReader(stream_);
             var request_ = await reader_.ReadLineAsync();
+
             _logger.LogTrace("Request: {Request}", request_);
+            // for each segment in the configuration
+            // pass the request to the segment processor
+            // collect the processed requests
+            // pass it to renderers
+            // return the consolidated result to the client
+
             await using var writer_ = new StreamWriter(stream_);
             await writer_.WriteLineAsync(request_);
             await writer_.FlushAsync();
