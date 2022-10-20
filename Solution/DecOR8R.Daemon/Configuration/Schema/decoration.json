@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://axler8r.io/decor8r/decoration.json",
+  "title": "Decorator",
+  "description": "Decorate your prompt, tmux or NeoVim status line.",
+  "definitions": {
+    "section": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the section."
+        },
+        "subject": {
+          "type": "string",
+          "description": "The subject of the section."
+        },
+        "template": {
+          "type": "string",
+          "description": "The template of the section."
+        },
+        "foreground": {
+          "type": "string",
+          "description": "The foreground color of the section."
+        },
+        "background": {
+          "type": "string",
+          "description": "The background color of the section."
+        },
+        "symbol": {
+          "type": "string",
+          "description": "The symbol of the section."
+        }
+      }
+    }
+  },
+  "properties": {
+    "prompt": {
+      "title": "Prompt",
+      "description": "Prompt decoration.",
+      "type": "object",
+      "properties": {
+        "right": {},
+        "left": {},
+        "continue": {},
+        "debug": {}
+      },
+      "required": ["right", "left", "continue", "debug"]
+    }
+  },
+  "tmux": {},
+  "nvim": {},
+  "required": [
+
+  ]
+}
