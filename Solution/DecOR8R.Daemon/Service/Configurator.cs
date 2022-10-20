@@ -5,16 +5,13 @@ public class Configurator : BackgroundService
     private readonly IConfiguration _configuration;
     private readonly ILogger<Configurator> _logger;
 
-    public Configurator(
-        ILogger<Configurator> logger,
-        IConfiguration configuration)
+    public Configurator(ILogger<Configurator> logger, IConfiguration configuration)
     {
         _logger = logger;
         _configuration = configuration;
     }
 
-    protected override async Task ExecuteAsync(
-        CancellationToken stoppingToken)
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         while (!stoppingToken.IsCancellationRequested)
         {

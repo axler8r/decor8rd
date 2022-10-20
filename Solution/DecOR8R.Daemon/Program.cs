@@ -3,17 +3,12 @@ using DecOR8R.Daemon.Service;
 var host_ = Host.CreateDefaultBuilder(args)
     .UseSystemd()
     .ConfigureAppConfiguration(
-        (
-            context,
-            builder) =>
+        (context, builder) =>
         {
             // prepare base path
             var configRoot_ = Environment.GetEnvironmentVariable("$XDG_CONFIG_HOME");
             if (string.IsNullOrEmpty(configRoot_))
-                configRoot_ =
-                    Path.Combine(
-                        Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-                        ".config");
+                configRoot_ = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".config");
             var configPath_ = Path.Combine(configRoot_, "decor8r");
             builder.SetBasePath(configPath_);
 
@@ -23,16 +18,11 @@ var host_ = Host.CreateDefaultBuilder(args)
             builder.AddJsonFile($"appsettings.{env_.EnvironmentName}.json", true, true);
 
             // add user configuration files
-            foreach (var file_ in Directory.GetFiles(
-                         configPath_,
-                         "*.json",
-                         SearchOption.TopDirectoryOnly))
+            foreach (var file_ in Directory.GetFiles(configPath_, "*.json", SearchOption.TopDirectoryOnly))
                 builder.AddJsonFile(file_, true, true);
         })
     .ConfigureLogging(
-        (
-            _,
-            builder) =>
+        (_, builder) =>
         {
             builder.AddSystemdConsole(
                 options =>
@@ -45,9 +35,7 @@ var host_ = Host.CreateDefaultBuilder(args)
             // TODO: Investigate console log formatter
         })
     .ConfigureServices(
-        (
-            _,
-            services) =>
+        (_, services) =>
         {
             services.AddHostedService<Configurator>();
             services.AddHostedService<Listener>();
