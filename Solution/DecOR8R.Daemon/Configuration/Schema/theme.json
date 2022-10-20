@@ -1,0 +1,211 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://axler8r.io/decor8r/theme.json",
+  "title": "Theme",
+  "description": "The colors, terminators and separators of your decorations.",
+  "definitions": {
+    "color_code": {
+      "title": "Color Code",
+      "description": "An HTML color code.",
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}$"
+    },
+    "terminator": {
+      "title": "Terminator",
+      "description": "Any unicode character that indicates a boundary between adornments.",
+      "type": "string",
+      "default": " ",
+      "examples": [
+        "\uE0B0",
+        ""
+      ]
+    },
+    "separator": {
+      "title": "Separator",
+      "description": "Any unicode character that indicates a boundary within a trinket.",
+      "type": "string",
+      "default": " ",
+      "examples": [
+        "\uE0B1",
+        ""
+      ]
+    }
+  },
+  "properties": {
+    "name": {
+      "title": "Theme Name",
+      "description": "Theme name.",
+      "type": "string",
+      "examples": [
+        "Solarized Dark",
+        "Material Palenight",
+        "Monokai"
+      ]
+    },
+    "scheme": {
+      "title": "Color Scheme",
+      "description": "A 16 colour palette of eight shades and eight accents.",
+      "type": "object",
+      "properties": {
+        "base00": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base01": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base02": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base03": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base04": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base05": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base06": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base07": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base08": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base09": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base0A": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base0B": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base0C": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base0D": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base0E": {
+          "$ref": "#/definitions/color_code"
+        },
+        "base0F": {
+          "$ref": "#/definitions/color_code"
+        }
+      },
+      "required": [
+        "base00",
+        "base01",
+        "base02",
+        "base03",
+        "base04",
+        "base05",
+        "base06",
+        "base07",
+        "base08",
+        "base09",
+        "base0A",
+        "base0B",
+        "base0C",
+        "base0D",
+        "base0E",
+        "base0F"
+      ]
+    },
+    "terminators": {
+      "title": "Terminators",
+      "description": "An optional BEGIN and mandatory END unicode character to demarcate a decoration.",
+      "type": "object",
+      "properties": {
+        "left_to_right": {
+          "title": "Left to Right",
+          "description": "The terminators that indicates the beginning and end of a decoration that goes from left to right.",
+          "properties": {
+            "begin": {
+              "$ref": "#/definitions/terminator"
+            },
+            "end": {
+              "$ref": "#/definitions/terminator"
+            }
+          },
+          "required": [
+            "begin"
+          ]
+        },
+        "right_to_left": {
+          "title": "Right to Left",
+          "description": "The terminator that indicates the beginning and end of a decoration that goes from right to left.",
+          "properties": {
+            "begin": {
+              "$ref": "#/definitions/terminator"
+            },
+            "end": {
+              "$ref": "#/definitions/terminator"
+            }
+          },
+          "required": [
+            "begin"
+          ]
+        }
+      },
+      "required": [
+        "left_to_right"
+      ]
+    },
+    "separators": {
+      "title": "Separators",
+      "description": "Any primary, secondary or tertiary separator to assist with the organization of a trinket.",
+      "type": "object",
+      "properties": {
+        "left_to_right": {
+          "title": "Left to Right",
+          "description": "The separators that indicates the beginning and end of a decoration that goes from left to right.",
+          "properties": {
+            "primary": {
+              "$ref": "#/definitions/separator"
+            },
+            "secondary": {
+              "$ref": "#/definitions/separator"
+            },
+            "tertiary": {
+              "$ref": "#/definitions/separator"
+            }
+          },
+          "required": [
+            "primary"
+          ]
+        },
+        "right_to_left": {
+          "title": "Right to Left",
+          "description": "The separator that indicates the beginning and end of a decoration that goes from right to left.",
+          "properties": {
+            "primary": {
+              "$ref": "#/definitions/separator"
+            },
+            "secondary": {
+              "$ref": "#/definitions/separator"
+            },
+            "tertiary": {
+              "$ref": "#/definitions/separator"
+            }
+          },
+          "required": [
+            "primary"
+          ]
+        }
+      },
+      "required": [
+        "left_to_right"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "scheme",
+    "terminators",
+    "separators"
+  ]
+}

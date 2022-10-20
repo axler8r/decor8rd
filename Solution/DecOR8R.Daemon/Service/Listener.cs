@@ -8,14 +8,17 @@ public class Listener : BackgroundService
     private readonly IConfiguration _configuration;
     private readonly string _socketFileName;
 
-    public Listener(ILogger<Listener> logger, IConfiguration configuration)
+    public Listener(
+        ILogger<Listener> logger,
+        IConfiguration configuration)
     {
         _logger = logger;
         _configuration = configuration;
         _socketFileName = Path.Combine(Path.GetTempPath(), "decor8rd.sock");
     }
 
-    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    protected override async Task ExecuteAsync(
+        CancellationToken stoppingToken)
     {
         _logger.LogInformation("Starting {This}", GetType().FullName);
 
@@ -24,7 +27,8 @@ public class Listener : BackgroundService
         var endpoint_ = new UnixDomainSocketEndPoint(_socketFileName);
 
         _logger.LogInformation("Listening for incoming connections");
-        using var listener_ = new Socket(AddressFamily.Unix, SocketType.Stream, ProtocolType.Unspecified);
+        using var listener_ =
+            new Socket(AddressFamily.Unix, SocketType.Stream, ProtocolType.Unspecified);
         listener_.Bind(endpoint_);
         listener_.Listen(1);
 
