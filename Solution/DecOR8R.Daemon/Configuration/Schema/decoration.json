@@ -44,12 +44,16 @@
         "continue": {},
         "debug": {}
       },
-      "required": ["right", "left", "continue", "debug"]
+      "required": [
+        "right",
+        "left",
+        "continue",
+        "debug"
+      ]
     }
   },
   "tmux": {},
   "nvim": {},
   "required": [
-
   ]
 }

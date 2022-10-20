@@ -1,7 +1,3 @@
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Hosting;
-
 namespace DecOR8R.Daemon.Service;
 
 public class Configurator : BackgroundService
@@ -23,6 +19,10 @@ public class Configurator : BackgroundService
         while (!stoppingToken.IsCancellationRequested)
         {
             await Task.Delay(1000, stoppingToken);
+
+            _logger.LogInformation("Configurator running at: {Now}", DateTimeOffset.UtcNow.ToString("O"));
+            _logger.LogDebug("Configuration is {Configuration}", _configuration.ToString());
+            _logger.LogDebug("Base00 is {Base00}", _configuration["scheme:base00"]);
         }
     }
 }

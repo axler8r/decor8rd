@@ -32,7 +32,7 @@
     }
   },
   "properties": {
-    "name":{
+    "name": {
       "title": "Theme Name",
       "description": "Theme name.",
       "type": "string",
@@ -87,7 +87,6 @@
           "$ref": "#/definitions/color_code"
         },
         "base0D": {
-
           "$ref": "#/definitions/color_code"
         },
         "base0E": {
@@ -132,7 +131,9 @@
               "$ref": "#/definitions/terminator"
             }
           },
-          "required": [ "begin" ]
+          "required": [
+            "begin"
+          ]
         },
         "right_to_left": {
           "title": "Right to Left",
@@ -145,10 +146,14 @@
               "$ref": "#/definitions/terminator"
             }
           },
-          "required": [ "begin" ]
+          "required": [
+            "begin"
+          ]
         }
       },
-      "required": [ "left_to_right" ]
+      "required": [
+        "left_to_right"
+      ]
     },
     "separators": {
       "title": "Separators",
@@ -169,7 +174,9 @@
               "$ref": "#/definitions/separator"
             }
           },
-          "required": [ "primary" ]
+          "required": [
+            "primary"
+          ]
         },
         "right_to_left": {
           "title": "Right to Left",
@@ -185,10 +192,14 @@
               "$ref": "#/definitions/separator"
             }
           },
-          "required": [ "primary" ]
+          "required": [
+            "primary"
+          ]
         }
       },
-      "required": [ "left_to_right" ]
+      "required": [
+        "left_to_right"
+      ]
     }
   },
   "required": [
