@@ -4,6 +4,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecOR8R.Daemon", "DecOR8R.Daemon\DecOR8R.Daemon.csproj", "{64051DB0-BB7B-4F00-A286-D829126D5E75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecOR8R.Test", "DecOR8R.Test\DecOR8R.Test.csproj", "{BABE9311-7F3F-4F47-B400-1DE4DB0EFCB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecOR8R.Component", "DecOR8R.Component\DecOR8R.Component.csproj", "{CAD27902-74B0-45F3-B93D-7C43001A54D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +29,13 @@ Global
 		{64051DB0-BB7B-4F00-A286-D829126D5E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64051DB0-BB7B-4F00-A286-D829126D5E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64051DB0-BB7B-4F00-A286-D829126D5E75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BABE9311-7F3F-4F47-B400-1DE4DB0EFCB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BABE9311-7F3F-4F47-B400-1DE4DB0EFCB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BABE9311-7F3F-4F47-B400-1DE4DB0EFCB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BABE9311-7F3F-4F47-B400-1DE4DB0EFCB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD27902-74B0-45F3-B93D-7C43001A54D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD27902-74B0-45F3-B93D-7C43001A54D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD27902-74B0-45F3-B93D-7C43001A54D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD27902-74B0-45F3-B93D-7C43001A54D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
