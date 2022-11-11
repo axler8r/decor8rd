@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DecOR8R.Component\DecOR8R.Component.csproj" />
+  </ItemGroup>
+
 </Project>
